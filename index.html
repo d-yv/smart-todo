@@ -2,12 +2,12 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Умный To-Do</title>
+    <title>To-Do</title>
     <link rel="stylesheet" href="/src/css/style.css" />
   </head>
   <body>
     <main>
-      <h1>Умный To-Do</h1>
+      <h1>To-Do</h1>
 
       <form id="taskForm">
         <input type="text" id="title" placeholder="Название задачи" required />
@@ -19,18 +19,18 @@
           <option value="учёба">Учёба</option>
         </select>
 
-        <select id="priority" required>
-          <option value="">Приоритет</option>
-          <option value="низкий">Низкий</option>
-          <option value="средний">Средний</option>
-          <option value="высокий">Высокий</option>
-        </select>
-
+        <input type="datetime-local" id="deadline" required />
+        <input
+          type="text"
+          id="assignedTo"
+          placeholder="Для кого задача?"
+          required
+        />
         <button type="submit">Добавить</button>
       </form>
 
       <section id="filters">
-        <h2>Фильтры</h2>
+        <h2>Задачи</h2>
         <!-- Здесь позже будут фильтры -->
       </section>
 
