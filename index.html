@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Умный To-Do</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Умный To-Do</h1>
+
+      <form id="taskForm">
+        <input type="text" id="title" placeholder="Название задачи" required />
+
+        <select id="category" required>
+          <option value="">Категория</option>
+          <option value="дом">Дом</option>
+          <option value="работа">Работа</option>
+          <option value="учёба">Учёба</option>
+        </select>
+
+        <select id="priority" required>
+          <option value="">Приоритет</option>
+          <option value="низкий">Низкий</option>
+          <option value="средний">Средний</option>
+          <option value="высокий">Высокий</option>
+        </select>
+
+        <button type="submit">Добавить</button>
+      </form>
+
+      <section id="filters">
+        <h2>Фильтры</h2>
+        <!-- Здесь позже будут фильтры -->
+      </section>
+
+      <ul id="taskList"></ul>
+    </main>
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
