@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>To-Do</title>
+    <script type="module" crossorigin src="/assets/index-BDafSb-D.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-uCz-iplI.css">
+  </head>
+  <body>
+    <main>
+      <h1>To-Do</h1>
+
+      <form id="taskForm">
+        <input type="text" id="title" placeholder="Название задачи" required />
+
+        <select id="category" required>
+          <option value="">Категория</option>
+          <option value="дом">Дом</option>
+          <option value="работа">Работа</option>
+          <option value="учёба">Учёба</option>
+        </select>
+
+        <input type="datetime-local" id="deadline" required />
+        <input
+          type="text"
+          id="assignedTo"
+          placeholder="Для кого задача?"
+          required
+        />
+        <button type="submit">Добавить</button>
+      </form>
+
+      <section id="filters">
+        <h2>Задачи</h2>
+        <!-- Здесь позже будут фильтры -->
+      </section>
+
+      <ul id="taskList"></ul>
+    </main>
+
+  </body>
+</html>
