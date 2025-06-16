@@ -1,5 +1,20 @@
 import { renderTasks } from './render.js';
 
+const categories = ['Работа', 'Дом', 'Учёба', 'Спорт'];
+const assignees = ['Я', 'Катя', 'Команда', 'Не важно'];
+
+function populateSelect(selectElement, options) {
+  options.forEach(option => {
+    const opt = document.createElement('option');
+    opt.value = option;
+    opt.textContent = option;
+    selectElement.appendChild(opt);
+  });
+}
+
+populateSelect(document.querySelector('#categorySelect'), categories);
+populateSelect(document.querySelector('#assigneeSelect'), assignees);
+
 let tasks = [];
 
 const form = document.querySelector('#taskForm');
@@ -8,9 +23,9 @@ form.addEventListener('submit', e => {
   e.preventDefault();
 
   const title = document.querySelector('#title').value.trim();
-  const category = document.querySelector('#category').value;
+  const category = document.querySelector('#categorySelect').value;
   const deadline = document.querySelector('#deadline').value;
-  const assignedTo = document.querySelector('#assignedTo').value.trim();
+  const assignedTo = document.querySelector('#assigneeSelect').value.trim();
 
   const task = {
     id: Date.now(),

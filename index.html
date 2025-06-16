@@ -12,20 +12,10 @@
       <form id="taskForm">
         <input type="text" id="title" placeholder="Название задачи" required />
 
-        <select id="category" required>
-          <option value="">Категория</option>
-          <option value="дом">Дом</option>
-          <option value="работа">Работа</option>
-          <option value="учёба">Учёба</option>
-        </select>
-
+        <select name="category" id="categorySelect" required></select>
+        <select name="assigee" id="assigneeSelect" required></select>
         <input type="datetime-local" id="deadline" required />
-        <input
-          type="text"
-          id="assignedTo"
-          placeholder="Для кого задача?"
-          required
-        />
+
         <button type="submit">Добавить</button>
       </form>
 
