@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>To-Do</title>
-    <script type="module" crossorigin src="/smart-todo/assets/index-BDafSb-D.js"></script>
+    <script type="module" crossorigin src="/smart-todo/assets/index-DLgHFD1A.js"></script>
     <link rel="stylesheet" crossorigin href="/smart-todo/assets/index-uCz-iplI.css">
   </head>
   <body>
@@ -13,20 +13,10 @@
       <form id="taskForm">
         <input type="text" id="title" placeholder="Название задачи" required />
 
-        <select id="category" required>
-          <option value="">Категория</option>
-          <option value="дом">Дом</option>
-          <option value="работа">Работа</option>
-          <option value="учёба">Учёба</option>
-        </select>
-
+        <select name="category" id="categorySelect" required></select>
+        <select name="assigee" id="assigneeSelect" required></select>
         <input type="datetime-local" id="deadline" required />
-        <input
-          type="text"
-          id="assignedTo"
-          placeholder="Для кого задача?"
-          required
-        />
+
         <button type="submit">Добавить</button>
       </form>
 

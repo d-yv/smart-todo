@@ -1,0 +1,10 @@
+(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function t(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(e){if(e.ep)return;e.ep=!0;const o=t(e);fetch(e.href,o)}})();const d=document.querySelector("#taskList");function a(c,r){d.innerHTML="",c.forEach(t=>{const n=document.createElement("li"),e=new Date(t.deadline),o=!t.completed&&e<new Date;n.innerHTML=`
+      <div>
+        <strong>${t.title}</strong> 
+        <em>(${t.category})</em> 
+        <span>→ ${t.assignedTo}</span> 
+        <time>${e.toLocaleString()}</time>
+        ${o?'<span class="overdue">⚠️ Просрочено</span>':""}
+      </div>
+      <button data-id="${t.id}">✓</button>
+    `,n.querySelector("button").addEventListener("click",()=>{r(t.id)}),t.completed&&n.classList.add("completed"),o&&n.classList.add("overdue"),d.appendChild(n)})}const f=["Работа","Дом","Учёба","Спорт"],p=["Я","Катя","Команда","Не важно"];function u(c,r){r.forEach(t=>{const n=document.createElement("option");n.value=t,n.textContent=t,c.appendChild(n)})}u(document.querySelector("#categorySelect"),f);u(document.querySelector("#assigneeSelect"),p);let s=[];const l=document.querySelector("#taskForm");l.addEventListener("submit",c=>{c.preventDefault();const r=document.querySelector("#title").value.trim(),t=document.querySelector("#categorySelect").value,n=document.querySelector("#deadline").value,e=document.querySelector("#assigneeSelect").value.trim(),o={id:Date.now(),title:r,category:t,deadline:n,assignedTo:e,completed:!1};s.push(o),l.reset(),a(s,m)});function m(c){const r=s.find(t=>t.id===c);r&&(r.completed=!r.completed,a(s,m))}
